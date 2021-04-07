@@ -2,8 +2,10 @@
 
 using namespace std;
 
+int a=0, b=0, residuo=0, N;
 char cont= 0;
 int num_n= 0;
+
 
 
 int main()
@@ -18,6 +20,12 @@ int main()
          case 1:{
              /* Escriba un programa que pida dos números A y B e imprima en pantalla el residuo
               de la división A/B.*/
+             cout<<"ingrese un numero: ";
+             cin>>a;
+             cout<<"ingrese otro numero: ";
+             cin>>b;
+             residuo=a%b;
+             cout<<"el residuo de la division es: " <<residuo<<endl;
 
              break;
          }
@@ -32,7 +40,17 @@ int main()
          case 3:{
              /*Escriba un programa que pida dos números A y B e imprima
               en pantalla el mayor.*/
-             cout << "Valor sin sentido \n";
+             cout <<"ingrese un numero: ";
+             cin>>a;
+             cout <<"ingrese otro numero: ";
+             cin>>b;
+
+             if(a>b){;
+                 cout<<"el mayor es: "<<a<<endl;
+                 }
+             else if (b>a){;
+                 cout<<"el mayor es: "<<b<<endl;
+                 }
              break;
          }
 
@@ -46,7 +64,13 @@ int main()
          case 5:{
              /*Escriba un programa que pida dos números A y B e imprima
               en pantalla la división A/B con redondeo.*/
-             cout << "Valor sin sentido \n";
+             cout<<"ingrese un numero: ";
+             cin>>a;
+             cout<<"ingrese otro numero: ";
+             cin>>b;
+             residuo= a/b;
+             cout<<"la division entera es: "<<residuo<<endl;
+
              break;
          }
 
@@ -60,7 +84,13 @@ int main()
          case 7:{
              /*Escriba un programa que pida un número N e imprima en pantalla
               la suma de todos los números entre 0 y N (incluyéndose el mismo).*/
-             cout << "Valor sin sentido \n";
+             int suma=0;
+             cout << "ingrese un numero N: ";
+             cin>>N;
+             for (int i=0; i<=N; i++) {
+                 suma +=i;
+             }
+             cout<<"la suma es: "<<suma<<endl;
              break;
          }
 
@@ -72,8 +102,15 @@ int main()
 
          case 9:{
              /*Escriba un programa que pida un número N e imprima el perímetro y área de un círculo
-              con radio N. Nota: use 3.1416 como una aproximación de pi.*/
-             cout << "Valor sin sentido \n";
+              con radio N. Nota: use 3.1416 como una aproximación de pi.*/           
+             float P, X;
+             cout <<"ingrese un numero N: ";
+             cin>>N;
+             P=2*3.1416*N;
+             X=3.1416*N*N;
+             cout<<"el perimetro del circulo con radio N es:"<<P<<endl;
+             cout<<"el area del circulo con radio N es: "<<X<<endl;
+
              break;
          }
 
@@ -87,7 +124,13 @@ int main()
          case 11:{
              /*Escriba un programa que pida un número N e imprima en pantalla
               su tabla de multiplicar hasta 10xN.*/
-             cout << "Valor sin sentido \n";
+             int resultado=0;
+             cout<<"ingrese un numero N: ";
+             cin>>N;
+             for(int i=0; i=N; N--){;
+                 resultado=10*i;
+                 cout<<"10"<<"X"<<N<<"="<<resultado<<endl;
+             }
              break;
          }
 
@@ -101,7 +144,15 @@ int main()
          case 13:{
              /*Escriba un programa que pida un número N e imprima
               todos los divisores de N.*/
-             cout << "Valor sin sentido \n";
+
+             cout << "ingrese un numero N: ";
+             cin>>N;
+             for(int i=1; i<=N; i++){
+                 if(N%i==0){;
+                     cout<<"sus divisores son: "<<i<<" "<<endl;
+                 }
+             }
+
              break;
          }
 
@@ -116,7 +167,13 @@ int main()
              /*Escriba un programa que pida constantemente números hasta que se
               ingrese el número cero e imprima en pantalla la suma de todos los
               números ingresados.*/
-             cout << "Valor sin sentido \n";
+             int x=0, suma=0;
+             do {
+                 cout<<"ingrese un numero: ";
+                 cin>>x;
+                 suma=suma+x;
+             } while (x!=0);
+             cout<<"la sumatoria es igual a: "<<suma<<endl;
              break;
          }
 
@@ -132,7 +189,15 @@ int main()
              /*Escriba un programa que pida constantemente números hasta que se
               ingrese el número cero e imprima en pantalla el mayor de todos los
               números ingresados.*/
-             cout << "Valor sin sentido \n";
+             int mayor=0;
+             do{
+                 cout<<"ingrese un numero: ";
+                 cin>>N;
+                 if(N>mayor)
+                     mayor=N;
+             }while (N!=0);
+             cout<<"el mayor es: "<<mayor<<endl;
+
              break;
          }
 
@@ -146,7 +211,9 @@ int main()
          case 19:{
              /*Escriba un programa que pida un número N e imprima si es
              o no un número primo.*/
-             cout << "Valor sin sentido \n";
+             cout << "Ingrese un valor N: ";
+
+
              break;
          }
 
@@ -207,7 +274,7 @@ int main()
              /*Escriba un programa que actúe como una calculadora con
               operaciones de suma, resta, multiplicación y división,
               el usuario debe ingresar los operandos y la operación a realizar.*/
-             cout << "Valor sin sentido \n";
+             cout << "";
              break;
          }
 
