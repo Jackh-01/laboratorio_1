@@ -407,7 +407,32 @@ int main()
 
          case 10:{
              /*Escriba un programa que reciba un número n e imprima el enésimo número primo.*/
-             cout << "Valor sin sentido \n";
+
+               int A,contador2,contador,N, contador3=0, acumulador;
+                   cout << "Ingrese un numero: "; cin >> N;
+
+                   contador2 = 0;
+
+                   for(int B=1;B<=1000;B++){
+                       contador=0;
+                       for(int A=1;A<=B;A++){
+                           if(B%A==0){
+                             // contador para saber cuando el numero es primo
+                             contador += 1;
+
+                           }
+                       }
+        if (contador==2){
+            // para contar la cantidad de numeros primos de 0 a 1000 de uno en uno
+            contador2++;
+
+        if (contador2==N){
+            // cuando la cantidad de primos es igual a N
+            cout <<"El enesimo numero primo es "<< B<< endl;
+        }
+
+        }
+    }
              break;
          }
 
