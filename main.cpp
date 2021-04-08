@@ -422,11 +422,11 @@ int main()
 
                            }
                        }
-                  if (contador==2){
+                   if (contador==2){
                       // para contar la cantidad de numeros primos de 0 a 1000 de uno en uno
                       contador2++;
 
-                  if (contador2==N){
+                   if (contador2==N){
                       // cuando la cantidad de primos es igual a N
                       cout <<"El enesimo numero primo es "<< B<< endl;
                   }
