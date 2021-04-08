@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int a=0, b=0, residuo=0, N;
+int a=0, b=0, c=0, residuo=0, N;
 char cont= 0;
 int num_n= 0;
 
@@ -193,7 +193,20 @@ int main()
          case 12:{
              /*Escriba un programa que pida un número N e imprima todas
               las potencias desde N^1 hasta N^5*/
-             cout << "Valor sin sentido \n";
+             cout<<"ingrese un nuemro N: ";
+             cin>>N;
+             int resultado=1;
+             cout <<"El resultado de la potencia es: " << endl;
+             for (int cont=1; cont<=5;cont++){
+
+                resultado=resultado*N;
+                cout << resultado << endl;
+
+
+
+             }
+
+
              break;
          }
 
@@ -215,8 +228,23 @@ int main()
          case 14:{
              /*Escriba un programa que imprima dos columnas paralelas,
               una con los números del 1 al 50 y otra con los números del 50 al 1.*/
-             cout << "Valor sin sentido \n";
-             break;
+              a=1;
+              b=50;
+              cont=1;
+              for (cont=1;cont<=50;cont++){
+                  if (a<10){
+                  cout << a << "        " << b << endl;
+                  a=a+1;
+                  b=b-1;
+                }
+
+                  else if (a>=10){
+                  cout << a << "       " << b << endl;
+                  a=a+1;
+                  b=b-1;
+                  }
+              }
+              break;
          }
 
          case 15:{
@@ -237,7 +265,22 @@ int main()
              /*Escriba un programa que pida constantemente números hasta que se ingrese
               el número cero e imprima en pantalla el promedio de los números ingresados
               (excluyendo el cero).*/
-             cout << "Valor sin sentido \n";
+
+             cout<< "Ingrese numeros contantemente para definir el promedio, para finalizar ingrese el numero 0." << endl;
+
+             cin>>b;
+            for(cont=1;b!=0;cont++){
+              a=a+b;
+              cin>>b;
+              if (b==0){
+                  cout<< "El promedio es: " << a/cont << endl;
+
+              }
+
+
+
+            }
+
              break;
          }
 
@@ -260,7 +303,22 @@ int main()
          case 18:{
              /*Escriba un programa que pida un número N e imprima
               si es o no un cuadrado perfecto.*/
-             cout << "Valor sin sentido \n";
+
+             cout<< "Ingrese un numero cualquiera: " ;
+             cin >> N;
+             for (a=1;a<=1000;a++){
+                 if (a*a==N){
+                     cout<< N << " Es un cuadrado perfecto."<< endl;
+                   break;
+
+                 }
+
+             }
+             if (a*a!=N){
+                 cout<< N<< " No es un cuadrado perfecto."<< endl;
+             }
+
+
              break;
          }
 
@@ -276,7 +334,22 @@ int main()
          case 20:{
              /*Escriba un programa que pida un número N e imprima si es
               o no un palíndromo (igual de derecha a izquierda que de izquierda a derecha).*/
-             cout << "Valor sin sentido \n";
+             cout << "Ingrese un numero cualquiera: ";
+             cin>> N;
+             a=N;
+            while (a>0){
+                b=a%10;
+                a=a/10;
+                c= c*10+b;
+            }
+
+             if (c==N){
+                 cout<< N <<" Es un numero palindromo."<< endl;
+
+             }
+             else {
+                 cout << N << " No es un numero palindromo."<< endl;
+             }
              break;
          }
 
