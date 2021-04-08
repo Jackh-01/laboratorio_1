@@ -33,7 +33,17 @@ int main()
          case 2:{
              /*Escriba un programa que pida un número N e imprima
                en pantalla si es par o impar.*/
-             cout << "Que haces \n ";
+
+             cout <<"Ingrese el numero que desee saber si es par o impar: " ;
+             cin >>N;
+             a=N%2;
+             if (a==0){
+                 cout<<"El numero que ingreso es par"<< endl;
+             }
+             else {
+                 cout<<"El numero que ingreso es impar"<< endl;
+             }
+
              break;
          }
 
@@ -57,7 +67,17 @@ int main()
          case 4:{
              /*Escriba un programa que pida dos números A y B e imprima
               en pantalla el menor.*/
-             cout << "Valor sin sentido \n";
+             cout <<"ingrese un numero: ";
+             cin>>a;
+             cout <<"ingrese otro numero: ";
+             cin>>b;
+
+             if(a>b){;
+                 cout<<"el menor es: "<<b<<endl;
+                 }
+             else if (b>a){;
+                 cout<<"el menor es: "<<a<<endl;
+                 }
              break;
          }
 
@@ -77,7 +97,21 @@ int main()
          case 6:{
              /*Escriba un programa que pida dos números A y B e imprima en pantalla
               la potencia A^B, sin hacer uso de librerías matemáticas.*/
-             cout << "Valor sin sentido \n";
+             cout<<"ingrese el nuemro base: ";
+             cin>>a;
+             cout<<"ingrese el numero de potencia: ";
+             cin>>b;
+             int resultado=1;
+             for (int cont=1; cont<=b;cont++){
+
+                resultado=resultado*a;
+
+
+
+             }
+              cout <<"El resultado de la potencia es: " << resultado << endl;
+
+
              break;
          }
 
@@ -96,7 +130,15 @@ int main()
 
          case 8:{
              /*Escriba un programa que pida un número N e imprima en pantalla su factorial.*/
-             cout << "Valor sin sentido \n";
+             cout << "Ingrese un numero para calcular el factorial: ";
+             cin >> N;
+             a=1;
+             while(1<N){
+                 a=a*N;
+                 N=N-1;
+             }
+             cout << "El factorial es: " << a << endl ;
+
              break;
          }
 
@@ -117,7 +159,21 @@ int main()
          case 10:{
              /*Escriba un programa que pida un número N e imprima en pantalla todos
               los múltiplos de dicho número entre 1 y 100.*/
-             cout << "Valor sin sentido \n";
+             cout <<"ingrese un numero N: ";
+             cin>>N;
+             cout << "los multiplos menores que 100 son: "<< endl;
+             while (b<=100){
+                 if (b==0){
+                     a=a+1;
+                     b=N*a;
+                 }
+
+                 else{
+                 cout << b << endl;
+                 a=a+1;
+                 b=N*a;
+                }
+             }
              break;
          }
 
