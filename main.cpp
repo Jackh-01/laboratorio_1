@@ -211,8 +211,19 @@ int main()
          case 19:{
              /*Escriba un programa que pida un número N e imprima si es
              o no un número primo.*/
+             int i;
              cout << "Ingrese un valor N: ";
-
+             cin>>N;
+             for(i=1; i<=N; i++){
+                 if(N%i==0){
+                     b++;
+                 }
+             }
+             if(b>2)
+                 cout<<"el numero No es primo"<<endl;
+             else{
+                 cout<<"el numero es primo"<<endl;
+             }
 
              break;
          }
