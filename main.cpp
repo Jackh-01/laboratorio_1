@@ -3,7 +3,7 @@
 using namespace std;
 
 int a=0, b=0, c=0, residuo=0, N;
-char cont= 0;
+char cont= 0, C;
 int num_n= 0;
 
 
@@ -367,7 +367,18 @@ int main()
          case 21:{
              /*Escriba un programa que pida un carácter C, si es una letra la
               debe convertir de mayúscula a minúscula y viceversa e imprimirla.*/
-             cout << "Valor sin sentido \n";
+             cout << "ingrese un valot c: ";
+             cin>>C;
+             cont=C;
+             if(cont>64 && cont<91){
+                 C=cont+32;
+             cout<<"su caracter en minuscula es: "<<C<<endl;
+             }
+             else if(cont>96 && cont<123){
+                 C=cont-32;
+             cout<<"su caracter en mayuscula es: "<<C<<endl;
+             }
+             else cout<<"su caracter es: "<<C<<endl;
              break;
          }
 
@@ -381,7 +392,21 @@ int main()
          case 23:{
              /*Escriba un programa que pida dos números A y B e imprima en pantalla el mínimo
               común múltiplo entre los dos.*/
-             cout << "Valor sin sentido \n";
+             cout<<"ingrese un numero: "; cin>>a;
+             cout<<"ingrese otro numero: "; cin>>b;
+             if (b>a) {
+                 num_n = a;
+                 a = b;
+                 b = num_n;
+             }
+             num_n=a;
+             while(true){
+                 if (num_n%a==0 && num_n%b==0){
+                   cout << "el MCM entre " <<a<< " y " <<b<<" es: " << num_n <<endl;
+                   break;
+                 }
+                 num_n++;
+             }
              break;
          }
 
@@ -396,7 +421,11 @@ int main()
          case 25:{
              /*Escriba un programa que pida un número N e imprima en
               pantalla la cantidad de dígitos de N.*/
-             cout << "Valor sin sentido \n";
+             cout << "ingrese un valor N: ";
+             cin>>N;
+             for(b=0; N!=0; N=N/10) b+=1;
+
+             cout<<"la cantidad de digitos de N es: "<<b<<endl;
              break;
          }
 
@@ -414,8 +443,19 @@ int main()
              /*Escriba un programa que actúe como una calculadora con
               operaciones de suma, resta, multiplicación y división,
               el usuario debe ingresar los operandos y la operación a realizar.*/
-             cout << "";
-             break;
+             cout << "ingrese un valor a: ";cin>>a;
+             cout<<"ingrese la operacion que desea realizas (*, +, -, /): ";cin>>cont;
+             cout<<"ingrese un valor b: "; cin>>b;
+             if(cont==42) cout<<"el resultado es: "<<a*b<<endl;
+             else if(cont==43) cout<<"el resultado es: "<<a+b<<endl;
+             else if(cont==45) cout<<"el resultado es: "<<a-b<<endl;
+             else if (cont==47) {
+                  if (b == 0) cout << "Divicion en cero"<<endl;
+                  else cout << "el resultado es: " << a/b << endl;
+             }
+             else cout << "Debe de poner alguno de estos operadores (* , + , - , /): " << endl;
+
+           break;
          }
 
          case 28:{
@@ -433,7 +473,22 @@ int main()
              el usuario usará los símbolos `>', `<' y `=' para indicarle al programa si B es mayor, menor o igual
              que A. El programa imprimira un nuevo número B, con base en simbolo ingresado por el usuario, y
              repetira el proceso hasta acertar el número seleccionado por usuario.*/
-             cout << "Valor sin sentido \n";
+             int B=100; num_n=50;
+             cout << "Ponga (<) si es menor, (>) si es mayor y (=) si es el numero que penso: "<<endl;
+             while(cont!=61){
+                 cout << " El numero que esta pensando es = " << num_n ;
+                 cin>>cont;
+                 if (cont==60){
+                     B=num_n;
+                     num_n=num_n-((B-a)/2);
+                 }
+                 else if (cont==62){
+                     a=num_n;
+                     num_n=((B-a)/2)+num_n;
+                 }
+                 else if (cont==61) cout << "Gracias por jugar" << endl;
+                 else cout << "Debe de colocar ( < , > , = )" << endl;
+             }
              break;
          }
 
@@ -461,7 +516,15 @@ int main()
          case 1:{
              /*Escriba un programa que identique si un carácter ingresado es una vocal,
              una consonante o ninguna de las 2 e imprima un mensaje según el caso.*/
-             cout << "Como estas \n";
+             cout << "Ingrese una letra: "<<endl;
+             cin >> cont;
+             if ((cont>64 && cont<91 )|| (cont>96 && cont<123)||cont==-91 || cont==-92){
+                 if (cont==65 || cont==69 || cont==73 || cont==79 || cont==85 || cont==97 || cont==101 || cont==105 || cont==111 || cont==117){
+                     cout << cont << " es una VOCAL." << endl;
+                 }
+                 else cout << cont << " es una CONSONANTE" << endl;
+             }
+             else cout << "No es una letra" << endl;
              break;
          }
 
