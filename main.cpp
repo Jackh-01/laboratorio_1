@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <time.h>
 
+
 using namespace std;
 
 int a=0, b=0, c=0, residuo=0, N;
