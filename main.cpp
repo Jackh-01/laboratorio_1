@@ -1,4 +1,7 @@
 #include <iostream>
+#include <cstdlib>
+#include <time.h>
+
 
 using namespace std;
 
@@ -385,7 +388,13 @@ int main()
          case 22:{
              /*Escriba un programa que pida una cantidad entera de segundos
               y la imprima en formato horas:minutos:segundos.*/
-             cout << "Valor sin sentido \n";
+             cout<< "Ingrese una cantidad de segundos a convertir en horas: ";
+             cin >> N;
+
+             a=N/3600;
+             b=(N-(a*3600))/60;
+             c=(N-(a*3600)-(b*60));
+             cout<<a<<":"<<b<<":"<< c<< endl;
              break;
          }
 
@@ -414,7 +423,28 @@ int main()
              /*Escriba un programa que pida una número entero e imprima un
               cuadrado de dicho tamaño, los bordes del cuadrado deben estar
               hechos con el carácter `+' y el interior debe estar vacío.*/
-             cout << "Valor sin sentido \n";
+             cout<<"Ingrese un numero para el tamaño del cuadro: ";
+             cin>>N;
+             for(a=1;a<=N;++a){
+                 cout<<"+";
+                 if (a==N){
+                     for (b=0;b<=N-3;b++){
+                        cout<<endl<<"+";
+                        if (b<=N-2){
+                            for (int c=0;c<N-2;c++)
+                                cout<<" ";
+                        }
+                     cout<<"+";
+                     }
+                 cout<<endl;
+                 }
+
+             }
+             for(a=1;a<=N;++a){
+                 cout<<"+";
+             }
+             cout<<endl;
+             break;
              break;
          }
 
@@ -435,7 +465,32 @@ int main()
               formaría, si sus lados tienen la longitud denida por los números
               ingresados. Tenga en cuenta el caso en que los números ingresados
               no forman un triángulo.*/
-             cout << "Valor sin sentido \n";
+                          cout <<"Ingrese el primer numero: ";
+                          cin >>a;
+                          cout <<"Ingrese el segundo numero: ";
+                          cin >>b;
+                          cout <<"Ingrese el tercer numero: ";
+                          cin >> c;
+
+                          if (a+b>c & a+c>b & b+c>a){
+                              if (a!=b & b!=c & a!=c){
+                                  cout<< "Es un triangulo Escaleno."<< endl;
+                              }
+                              else if(a==b & a!=c){
+                                  cout<< "Es un triangulo Isoceles."<< endl;
+                              }
+                              else if(a==b & a==c){
+                                  cout<< "Es un triangulo Equilatero."<< endl;
+                              }
+                          }
+
+                          else
+                              cout<<"No es un triangulo."<< endl;
+
+
+
+
+
              break;
          }
 
@@ -463,7 +518,16 @@ int main()
               en base a la siguiente suma innita:
 
               El usuario debe ingresar el número de elementos usados en la aproximación.*/
-             cout << "Valor sin sentido \n";
+             cout << "Ingrese el valor de n: ";
+             float N;
+             float b = 0.0;
+
+             cin >>N;
+
+                         for(a=1;a<=N; a++){
+                           b+=(2*(a%2)-1)/float(2*a-1);
+                         }
+                         cout << "La aproximacion de Pi con n= " << N << " es " << 4*b <<endl;
              break;
          }
 
@@ -498,7 +562,21 @@ int main()
              es mayor o menor que A, esto se repetirá hasta que el usuario adivine el número,
              en ese momento el programa le dirá el número de intentos que tardo el usuario en
              adivinar el número.*/
-             cout << "Valor sin sentido \n";
+
+             int a, b, c=0;
+             srand(time(NULL));
+                        a =rand()%100-1;
+                        for(b=0;b!=a;c++){
+                            cout << "Intente adivinar el numero oculto en el rango de 1 a 100: ";
+                            cin >> b;
+                            if (a>b)
+                                cout << "El numero es mayor."<<endl;
+                            else if (a<b)
+                                cout <<"El numero es menor."<<endl;
+                            else
+                                cout << "Adinivaste!\t Tus intentos fueron: " << c << endl;
+
+                        }
              break;
          }
 
