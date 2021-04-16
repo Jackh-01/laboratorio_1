@@ -1,4 +1,4 @@
-#include <iostream>
+ #include <iostream>
 #include <cstdlib>
 #include <time.h>
 
@@ -621,7 +621,21 @@ int main()
              /*Escriba un programa que debe leer un mes y un día de dicho mes para luego decir
              si esa combinación de mes y día son válidos. El caso más especial es el 29 de febrero,
              en dicho caso imprimir posiblemente año bisiesto.*/
-             cout << "Valor sin sentido \n";
+             int dia=0, mes=0, anio=0, fecha;
+             cout << "ingrese dia: ";
+             cin>>dia;
+             cout << "ingrese mes: ";
+             cin>>mes;
+             cout << "ingrese anio: ";
+             cin>>anio;
+             anio*=10000;
+             mes*=100;
+             dia=dia;
+             if(anio%4!=0 || (anio%100==0) && (anio%400!=0))
+                 cout<<"es bisiesto"<<endl;
+             else
+                 cout<<"no es bisiesto"<<endl;
+             cout<<fecha<<endl;
              break;
          }
 
@@ -649,10 +663,22 @@ int main()
 
              El tamaño del patrón estará determinado un número entero impar que
              ingrese el usuario. En el ejemplo mostrado, el tamaño de la gura es 7.*/
+             int A, B;
              cout << "ingrese un valor impar: ";
              cin>>num_n;
-             if (num_n%2==0); cout<<"debe ingresar un numero impar"<<endl;
-
+             if (num_n%2==0) cout << "Debe de ingresar un numero impar" << endl;
+             else{
+                 num_n=(num_n/2)+1;
+                 for(A=1;num_n>=A;A++){
+                    for(a=num_n-1;a>=A;a--) cout << " ";
+                    for(B=1;2*A-1>=B;B++) cout << "*";
+                    cout << endl;
+                 }
+                 for(A=1;num_n-1>=A;A++){
+                      for(a=1;a<=A;a++) cout << " ";
+                      for(B=(num_n*2)-3;A*2-1<=B;B--) cout << "*";
+                      cout << endl;
+                 }
              break;
          }
 
@@ -742,11 +768,22 @@ int main()
          case 11:{
              /*Escriba un programa que reciba un número y calcule el mínimo común
              múltiplo de todos los números enteros entre 1 y el número ingresado.*/
-             int A, B;
-
+             cout << "Ingrese un numero N: ";
+             cin >> num_n;cout << "\n\n";
+             a=0;
+             A=num_n;
+             while(a==0){
+                  A+=1;
+                  B=1;
+                  for (;B<=num_n;B++){
+                      if (A%B!=0) break;
+                      else if (B==num_n) a=1;
+                  }
+             }
+             cout << "\nEl MCM es: " << A << endl;
              break;
-         }
-
+        }
+             }
          case 12:{
              /*Escriba un programa que calcula el máximo factor primo de un número.*/
              cout << "Valor sin sentido \n";
@@ -756,7 +793,22 @@ int main()
          case 13:{
              /*Escriba un programa que reciba un número y calcule la suma
              de todos los primos menores que el número ingresado.*/
-             cout << "Valor sin sentido \n";
+             int A, B;
+             cout << "Ingrese un numero: ";
+             cin >> num_n;
+             A=2;
+             if (num_n<=1) cout <<"Poner un numero mayor a 1"<<endl;
+             else{
+                 for(;A<num_n;A++){
+                     for (B=2;B<=A;B++){
+                         if (A==B){
+                             a+=B;
+                         }
+                         else if (A%B==0) break;
+                     }
+                 }
+             }
+             cout <<"La suma de los numeros primos menores a "<<num_n<<"es: "<<a<<endl;
              break;
          }
 
@@ -786,7 +838,115 @@ int main()
              Nota: la salida del programa debe ser:
              En una espiral de 5x5, la suma es: 101.
              Otra nota: se le dará una bonicación si imprime la espiral.*/
-             cout << "Valor sin sentido \n";
+             int A, B, impar, ente, par, pos, sum, revisador;
+             cout << "Ingrese un numero N impar para realizar una espieral desde 1 con aumento a la izquierda en sentido horario\n";
+                         cout << "y de dimenciones NxN\n\n --> "; cin >> num_n; cout << "\n\n";
+                         int vec[num_n]; // definimos el vector de tamaño ingresado por el usuario
+                         B = (num_n*num_n) - num_n + 1; //numero inicial de la primera fila
+                         vec[A] = B;
+                         while (A < num_n){
+                             /*Imprime la primera fila*/
+                             //cout << B << "\n";
+                             if (vec[A] < 10) cout << vec[A] << "    ";
+                             else if(vec [A] < 100) cout << vec[A] << "   ";
+                             else if(vec [A] < 1000) cout << vec[A] << "  ";
+                             else cout << vec[A] << " ";
+                             A++;
+                             B += 1;
+                             vec[A] = B;
+                         }
+                         impar = num_n;//lo usaremos para definir espacios de resta arriab
+                         par = 1; // lo usamos para definir espacio de suma abajo
+                         for (B = num_n - 1; B != 0; B--){
+                             //el for se repite la cantidad de filas osea num_n - 1
+                             cout << "\n";
+                             A = 0;
+                             if (B > num_n / 2) { // primer traingulo de menores al vectro de arriba
+                                 ente ++;
+                                 for (pos = ente; pos != 0; pos--){
+                                     vec[A] -= 1;
+                                     if (vec[A] < 10) cout << vec[A] << "    ";
+                                     else if (vec[A] < 100) cout << vec[A] << "   ";
+                                     else if (vec[A] < 1000) cout << vec[A] << "  ";
+                                     else cout << vec[A] << " ";
+                                     A ++;
+                                 }
+                                 pos = num_n - ente - (ente - 1);
+                                 //cout << "\n\n" << pos << "\n\n";
+                                 impar -= 2;
+                                 sum = impar * impar - impar + 1;
+                                 for (;pos > 0; pos--){ // sectro de suma por girar en las manecillas del reloj
+                                     if (sum < 10) cout << sum << "    ";
+                                     else if (sum < 100) cout << sum << "   ";
+                                     else if (sum < 1000) cout << sum << "  ";
+                                     else cout << sum << " ";
+                                     vec[A] = sum;
+                                     sum ++;
+                                     A++;
+                                 }
+                                 sum ++;
+                                 pos = ente - 1;
+                                 for (; pos != 0; pos--){ // segundo triangulo de suma inferior
+                                     vec[A] += 1;
+                                     if (vec[A] < 10) cout << vec[A] << "    ";
+                                     else if (vec[A] < 100) cout << vec[A] << "   ";
+                                     else if (vec[A] < 1000) cout << vec[A] << "  ";
+                                     else cout << vec[A] << " ";
+                                     A ++;
+                                 }
+                             }
+                             else {
+                                 // segundo tramo menor que la mitad del numero ingresado
+                                 //cout << "\n\n\n" << sum << "   " << impar << "\n\n";
+                                 ente --;
+                                 for (pos = ente; pos != 0; pos--){ // disminuye el triagunlo de resta
+                                     vec[A] -= 1;
+                                     if (vec[A] < 10) cout << vec[A] << "    ";
+                                     else if (vec[A] < 100) cout << vec[A] << "   ";
+                                     else if (vec[A] < 1000) cout << vec[A] << "  ";
+                                     else cout << vec[A] << " ";
+                                     A ++;
+                                 }
+                                 par += 2;
+                                 pos = par;
+                                 impar += sum;
+                                 revisador = impar; //revisador es igual al calcuo de dos acumuladores que inician en 1 y van sumando desde acumulados multiplos de 8 desde cuatro [4,12,20,28,36...]
+                                 sum += 8;
+                                 for (;pos > 0; pos--){ //resta el primer numero de la fila que no es resta del superior
+                                     if (revisador < 10) cout << revisador << "    ";
+                                     else if (revisador < 100) cout << revisador << "   ";
+                                     else if (revisador < 1000) cout << revisador << "  ";
+                                     else cout << revisador << " ";
+                                     vec[A] = revisador;
+                                     revisador --;
+                                     A++;
+                                 }
+                                 for (pos= ente; pos != 0; pos--){ // Imprime el segundo triangulo
+                                     vec[A] += 1;
+                                     if (vec[A] < 10) cout << vec[A] << "    ";
+                                     else if (vec[A] < 100) cout << vec[A] << "   ";
+                                     else if (vec[A] < 1000) cout << vec[A] << "  ";
+                                     else cout << vec[A] << " ";
+                                     A ++;
+                                 }
+                             }
+                         }
+                         par = 2;
+                         revisador = 1;
+                         impar  = num_n * num_n;
+                         A = 1;
+                         while (A < impar){
+                             //cout << "\n\n" << revisador << "\n\n";
+                             for (pos = 4 ;pos > 0; pos --) {
+                                 A = A + par;
+                                 revisador += A;
+                                 //cout << "  " << A;
+                                 //cout << "  " << revisador;
+                             }
+                             par += 2;
+                             //cout << "\n\n" << revisador;
+                         }
+                         cout << "\n\n La suma de los numeros en la diagonal es = " << revisador;
              break;
          }
 
