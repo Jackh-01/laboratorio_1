@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int a=0, b=0, c=0, residuo=0, N;
+int a=0, b=0, c=0, residuo=0, N=0;
 char cont= 0, C;
 int num_n= 0;
 
@@ -571,7 +571,10 @@ int main()
 
              El tamaño del patrón estará determinado un número entero impar que
              ingrese el usuario. En el ejemplo mostrado, el tamaño de la gura es 7.*/
-             cout << "Valor sin sentido \n";
+             cout << "ingrese un valor impar: ";
+             cin>>num_n;
+             if (num_n%2==0); cout<<"debe ingresar un numero impar"<<endl;
+
              break;
          }
 
@@ -589,7 +592,17 @@ int main()
              Ej: 1, 1, 2, 3, 5, 8, ....
              Escriba un programa que reciba un número n y halle la suma de todos los números pares
              en la serie de Fibonacci menores a n.*/
-             cout << "Valor sin sentido \n";
+             int x=0, y=1, z=1;
+             cout << "ingrese un numero N:";
+             cin>>N;
+             cout<<"1 ";
+             for(int i=1; i<N; i++){
+                 z=x+y;
+                 cout<<z<<" ";
+                 x=y;
+                 y=z;
+             }
+
              break;
          }
 
@@ -604,7 +617,16 @@ int main()
          case 9:{
              /*Escriba un programa que pida un número entero N e imprima el resultado
              de la suma de todos sus dígitos elevados a sí mismos.*/
-             cout << "Valor sin sentido \n";
+             int A=0;
+             cout << "ingrese un numero N: ";
+             cin>>N;
+             for(;N!=0;N/=10){
+                 a=1;
+                 b=c%10;
+                 for(;b!=0;b-=1) a *=N%10;
+                 A+=a;
+             }
+             cout<<"el resultado es: "<<A<<endl;
              break;
          }
 
@@ -642,7 +664,8 @@ int main()
          case 11:{
              /*Escriba un programa que reciba un número y calcule el mínimo común
              múltiplo de todos los números enteros entre 1 y el número ingresado.*/
-             cout << "Valor sin sentido \n";
+             int A, B;
+
              break;
          }
 
@@ -720,7 +743,16 @@ int main()
              que reciba un número k y calcule cual es el primer número triangular que tiene más de k divisores.
              Tip: el enésimo número triangular se puede representar como n*(n+1)/2.
              Nota: la salida del programa debe ser: El numero es: 28 que tiene 6 divisores.*/
-             cout << "Valor sin sentido \n";
+             int k, ente=0;
+             cout << "ingrese un valor K: ";
+             cin>>k;
+             for(;k>=a;){
+                 a=0;
+                 N++;
+                 b=N*(N+1)/2;
+                 for(ente=1;b>=ente;ente++) if(b%ente==0) a++;
+             }
+             cout <<"El numero es: "<<b<<" que tiene " <<a<<" divisores "<<endl;
              break;
          }
 
