@@ -1,14 +1,11 @@
- #include <iostream>
+#include <iostream>
 #include <cstdlib>
 #include <time.h>
 
 using namespace std;
 
-<<<<<<< HEAD
+
 int a=0, b=0, c=0, d=0, e=0,f=0, residuo=0, N;
-=======
-int a=0, b=0, c=0, residuo=0, N=0;
->>>>>>> 692d707eca85797bf79547ba03a8b1fe23c34b47
 char cont= 0, C;
 int num_n= 0;
 
