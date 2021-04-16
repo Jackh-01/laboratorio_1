@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int a=0, b=0, c=0, residuo=0, N;
+int a=0, b=0, c=0, d=0, e=0,f=0, residuo=0, N;
 char cont= 0, C;
 int num_n= 0;
 
@@ -613,7 +613,99 @@ int main()
              Hacer un programa que entregue el número de billetes y monedas de cada denominación para com-
              pletar la cantidad deseada. Si por medio de los billetes y monedas disponibles no se puede lograr la
              cantidad deseada, el sistema deberá decir lo que resta para lograrla.*/
-             cout << "Que haces \n ";
+             int N,a = 0;
+             cout<<"Ingrese la cantidad de dinero: ";
+             cin>> N;
+
+            // for(N;N<50;)
+
+             if (N>=50000){
+                 a=N/50000;
+                 cout<<"50.000: "<<a<<endl;
+                 N=N-(50000*a);
+                 }
+             else{
+                 cout<<"50.000: 0"<<endl;
+             }
+
+                if (N>=20000){
+                 a=N/20000;
+                 cout<<"20.000: "<< a<<endl;
+                 N=N-(20000*a);
+                 }
+             else{
+                 cout<<"20.000: 0"<<endl;
+             }
+             if (N>=10000){
+                 a=N/10000;
+                 cout<<"10.000: "<< a<<endl;
+                 N=N-(10000*a);
+                 }
+             else{
+                 cout<<"10.000: 0"<<endl;
+             }
+             if (N>=5000){
+                 a=N/5000;
+                 cout<<"5.000: "<< a<<endl;
+                 N=N-(5000*a);
+                 }
+             else{
+                 cout<<"5.000: 0"<<endl;
+             }
+             if (N>=2000){
+                 a=N/2000;
+                 cout<<"2.000: "<< a<<endl;
+                 N=N-(2000*a);
+                 }
+             else{
+                 cout<<"2.000: 0"<<endl;
+             }
+             if (N>=1000){
+                 a=N/1000;
+                 cout<<"1.000: "<< a<<endl;
+                 N=N-(1000*a);
+                 }
+             else{
+                 cout<<"1.000: 0"<<endl;
+             }
+             if (N>=500){
+                 a=N/500;
+                 cout<<"500: "<< a<<endl;
+                 N=N-(500*a);
+                 }
+             else{
+                 cout<<"500: 0"<<endl;
+             }
+             if (N>=200){
+                 a=N/200;
+                 cout<<"200: "<< a<<endl;
+                 N=N-(200*a);
+                 }
+             else{
+                 cout<<"200: 0"<<endl;
+             }
+             if (N>=100){
+                 a=N/100;
+                 cout<<"100: "<< a<<endl;
+                 N=N-(100*a);
+                 }
+             else{
+                 cout<<"100: 0"<<endl;
+             }
+             if (N>=50){
+                 a=N/50;
+                 cout<<"50: "<< a<<endl;
+                 N=N-(50*a);
+                 }
+             else{
+                 cout<<"50: 0"<<endl;
+             }
+             if (N<50){
+                 cout << "Faltante: "<< N<< endl;
+             }
+             else{
+                 cout<<"Faltante: 0"<<endl;
+             }
              break;
          }
 
@@ -632,7 +724,29 @@ int main()
              ración de la misma manera, por lo que 345 representa tres horas y 45 minutos. El programa debe
              sumar esta duración primer número, y el resultado será impreso en la misma notación, en este caso
              1630, que es el tiempo de 3 horas y 45 minutos después de 12:45.*/
-             cout << "Valor sin sentido \n";
+             int a, b, c, d, N, n;
+             cout <<"Ingrese el primero numero: ";
+             cin >> N;
+             cout <<"Ingrese el segundo numero: ";
+             cin >> n;
+             a=N/100;
+             b=N-(a*100);
+             c= n/100;
+             d= n-(c*100);
+             if (a> 24 || b>59||c>24 || d>59){
+                 cout <<"uno de los datos ingresados es invalido"<< endl;
+             }
+             else{
+             a=a+c;
+             b=b+d;
+             if (b>59){
+                 a=a+1;
+                 b=60-b;
+             }
+             b=b*-1;
+             cout << "La hora es: "<<a<<b<< endl;
+             }
+
              break;
          }
 
@@ -658,7 +772,31 @@ int main()
              a la siguiente suma innita:
 
              El usuario debe ingresar el número de elementos usados en la aproximación.*/
-             cout << "Valor sin sentido \n";
+
+             float a,b, c, C=1, f, N;
+             int cont=1, d;
+             cout<<"Ingrese un numero N: ";
+             cin>>N;
+             a=1;
+             b=N-1;
+             c=b;
+             d=1;
+             f=1;
+             for(;cont!=N;cont++){
+                 for(;d<=c;d++){
+                     C=C*d;
+                 }
+
+                 a = a+(f/C);
+                 d=1;
+                 c=c-1;
+                 C=1;
+
+             }
+             cout<<"La aproximacion es: "<<a<<endl;
+
+
+
              break;
          }
 
