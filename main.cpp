@@ -852,7 +852,36 @@ int main()
              /*Escriba un programa que reciba 3 números a, b, c, y calcule la suma
              de todos los múltiplos de a y b que sean menores a c. Tenga en cuenta
              no sumar 2 veces los múltiplos comunes.*/
-             cout << "Valor sin sentido \n";
+             cout << "Ingrese el primero numero: ";
+             cin >> a;
+             cout << "Ingrese el segundo numero: ";
+             cin >> b;
+             cout << "Ingrese el tercer numero: ";
+             cin >> c;
+             int cont=a, d=0, e=0;
+             for(;cont<c;cont++){
+                 if(cont%a==0){
+                     cout << cont <<"+";
+                     d=d+cont;
+                 }
+                 else if(cont%b==0){
+
+                 }
+
+
+             }
+                 cont=a;
+                 for(;cont<c;cont++){
+                     if(cont%a==0){
+
+                     }
+                     else if(cont%b==0){
+                        cout<< cont<<"+";
+                        e=e+cont;
+                     }
+                 }
+             cout << " = "<<d+e<<endl;
+
              break;
          }
 
@@ -924,7 +953,21 @@ int main()
              }
          case 12:{
              /*Escriba un programa que calcula el máximo factor primo de un número.*/
-             cout << "Valor sin sentido \n";
+             cout << "Ingtrese un numero: ";
+             cin>> N;
+             a=N;
+             b=2;
+             c=0;
+             for(;a>1;b++){
+                 while(a%b==0){
+                     a=a/b;
+                     c=b;
+                 }
+             }
+                 cout <<"El mayor factor primo de "<<N<<" es: "<<c<<endl;
+
+
+
              break;
          }
 
@@ -956,7 +999,32 @@ int main()
              como una multiplicación de números de 3 dígitos.
              Ej: una de las posibles respuestas es: 143*777=111111.
              Nota: la salida del programa debe ser: 143*777=111111*/
-             cout << "Valor sin sentido \n";
+
+         /*    int a,b,N,e,f,d;
+             cout << "Ingrese el numero de 3 digitos: " ;
+             cin >>N;
+             b=100;
+             bool c= false;
+
+             while (c==false){
+                 for(;b<1000;b++){
+                     a=b*N;
+                     d=a;
+                     e=0;
+                     while(d>0){
+                         e= e + d%10;
+                         e=e*10;
+                         d=d/10;
+                         if(e/10==a){
+                             c=true;
+                             f=e/10;
+
+                             cout<<"una de las posibles respuestas es: "<<b<<"*"<<N<<"= "<<f<<endl;
+                         }
+                     }
+                 }
+
+             }*/
              break;
          }
 
